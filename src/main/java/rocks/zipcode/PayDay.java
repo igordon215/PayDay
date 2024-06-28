@@ -1,5 +1,7 @@
 package rocks.zipcode;
 
+import java.sql.SQLOutput;
+
 /**
  * rocks.zipcode.PayDay
  *
@@ -49,7 +51,17 @@ public class PayDay {
     * return name, grossPay, deduction, netPay as String
      */
     public String pay(String n, double rate, double worked, double deduct) {
-        return null;
+        Double grossPay, deduction, netPay;
+        grossPay=rate*worked;
+        deduction= grossPay*deduct;
+        netPay=grossPay-deduction;
+        //System.out.printf("%.2f",grossPay.toString());
+        String string,string2;
+       string2=String.format("%.2f",grossPay);
+       string=n+" "+string2+" "+deduction+" "+netPay;
+
+        return string;
+       // return ;
     }
 
 
